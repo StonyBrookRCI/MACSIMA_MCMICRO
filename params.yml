@@ -1,0 +1,11 @@
+workflow:
+  start-at: registration #registration
+  stop-at: downstream
+  background: true
+  segmentation-channel: 1
+  segmentation-recyze: true
+  #segmentation: [unmicst, ilastik]
+  segmentation: cellpose
+options:
+  ashlar: --flip-y
+  cellpose: --pretrained_model nuclei --chan 0 --diameter 50 --no_npy
