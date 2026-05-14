@@ -2,7 +2,7 @@
 
 This repository contains the scripts and configuration files required to process MACSima spatial proteomics data using the MCMICRO pipeline on the NVwulf high-performance computing (HPC) cluster.
 
-These workflows were specifically optimized for a Tissue Microarray (TMA) of pancreatic cancer samples imaged in the Department of Pathology.
+This workflow was specifically optimized for Tissue Microarray (TMA) analysis of Pancreatic Ductal Adenocarcinoma (PDAC). Developed within the Stony Brook University Department of Pathology, the pipeline is tailored to quantify the spatial dynamics of the Epithelial-Mesenchymal Transition (EMT).
 
 ![Pancreatic_Cancer](TMA_MCMICRO.gif)
 
