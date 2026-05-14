@@ -149,7 +149,7 @@ The output of this pipeline (OME-TIFFs and segmentation masks) can be combined a
 
 - [MCMICRO Official Documentation](https://mcmicro.org/)
 - [MACSima Pipeline GitHub](https://github.com/nf-core/mcmicro)
-- [Nextflow Documentation](https://www.nextflow.io/docs/latest/index.html)
+- [MACSima2mc Pipeline GitHub](https://github.com/SchapiroLabor/macsima2mc)
 - [MCMICRO Nature Methods Paper](https://www.nature.com/articles/s41592-021-01308-y)
 - [Getting Started on NVwulf](https://rci.stonybrook.edu/HPC/faqs/getting-started-nvwulf)
 - [NVwulf Open OnDemand Dashboard](https://nvwulf-ood.nvwulf.stonybrook.edu/pun/sys/dashboard)
