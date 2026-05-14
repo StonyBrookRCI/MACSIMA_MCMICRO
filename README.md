@@ -4,6 +4,8 @@ This repository contains the scripts and configuration files required to process
 
 These workflows were specifically optimized for a Tissue Microarray (TMA) of pancreatic cancer samples imaged in the Department of Pathology.
 
+![Pancreatic_Cancer](TMA_MCMICRO.gif)
+
 ---
 
 ## 🔬 Overview
