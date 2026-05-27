@@ -5,6 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --array=1-28
+#SBATCH --mem=100gb
 
 #INPUTS
 acquisitions=/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/acquisitions.tsv
