@@ -22,6 +22,6 @@ for cycle in $sample/*Cycle*; do
     sample_id+="_$(basename $sample)"
     echo "Processing: $cycle for Sample: $sample_id"
 
-    macsima2mc -i $cycle -o $output_dir/$sample_id -ic
+    macsima2mc -i $cycle -o $output_dir/$sample_id -ic -he -qc
     echo "Finished $cycle"
 done
