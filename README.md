@@ -6,21 +6,19 @@ This workflow was specifically optimized for Tissue Microarray (TMA) analysis of
 
 ![Pancreatic_Cancer](MCMICRO-ezgif.com-optimize.gif))
 
-Color legend:
+**Color legend:**
 
-| Marker | Color Name | Hex Code | Swatch |
+| Marker | Description | Hex Code | Visual Swatch |
 | :--- | :--- | :--- | :---: |
-| **DAPI** | Dark Blue | `#5500ff` | <kbd> </kbd> color dynamic via style if supported, or use image tag |
-| **DAPI** | Dark Blue | `#5500ff` | <span style="color:#5500ff; font-size:20px;">■</span> |
-| **GATA6** | Yellow | `#FFFF00` | <span style="color:#FFFF00; font-size:20px;">■</span> |
-| **K17** | Light Blue | `#55ffff` | <span style="color:#55ffff; font-size:20px;">■</span> |
-| **CD324** | Red | `#FF0000` | <span style="color:#FF0000; font-size:20px;">■</span> |
-| **Ki-67** | Green | `#00ff00` | <span style="color:#00ff00; font-size:20px;">■</span> |
-| **CD31** | Orange | `#ffaa00` | <span style="color:#ffaa00; font-size:20px;">■</span> |
-| **SMA1** | Medium Blue | `#0055ff` | <span style="color:#0055ff; font-size:20px;">■</span> |
-| **S100A2** | Orange | `#ffaa00` | <span style="color:#ffaa00; font-size:20px;">■</span> |
-| **PanCK** | White | `#FFFFFF` | <span style="color:#FFFFFF; font-size:20px;">■</span> |
-
+| **DAPI** | Dark Blue | `#5500ff` | 🟦 |
+| **GATA6** | Yellow | `#FFFF00` | 🟨 |
+| **K17** | Light Blue | `#55ffff` | 💎 |
+| **CD324** | Red | `#FF0000` | 🟥 |
+| **Ki-67** | Green | `#00ff00` | 🟩 |
+| **CD31** | Orange | `#ffaa00` | 🟧 |
+| **SMA1** | Medium Blue | `#0055ff` | 🔷 |
+| **S100A2** | Orange | `#ffaa00` | 🟧 |
+| **PanCK** | White | `#FFFFFF` | ⬜ |
 
 ---
 
