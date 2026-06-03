@@ -5,6 +5,17 @@ This repository contains the scripts and configuration files required to process
 This workflow was specifically optimized for Tissue Microarray (TMA) analysis of Pancreatic Ductal Adenocarcinoma (PDAC). A sample taken from the Stony Brook University Department of Pathology, the pipeline is tailored to quantify the spatial dynamics of the Epithelial-Mesenchymal Transition (EMT).
 
 ![Pancreatic_Cancer](MCMICRO-ezgif.com-optimize.gif))
+Color legend:
+* <img src="https://via.placeholder.com/15/5500ff/000000?text=+" /> **DAPI:** Dark Blue (`#5500ff`)
+* <img src="https://via.placeholder.com/15/FFFF00/000000?text=+" /> **GATA6:** Yellow (`#FFFF00`)
+* <img src="https://via.placeholder.com/15/55ffff/000000?text=+" /> **K17:** Light Blue (`#55ffff`)
+* <img src="https://via.placeholder.com/15/FF0000/000000?text=+" /> **CD324:** Red (`#FF0000`)
+* <img src="https://via.placeholder.com/15/00ff00/000000?text=+" /> **Ki-67:** Green (`#00ff00`)
+* <img src="https://via.placeholder.com/15/ffaa00/000000?text=+" /> **CD31:** Orange (`#ffaa00`)
+* <img src="https://via.placeholder.com/15/0055ff/000000?text=+" /> **SMA1:** Medium Blue (`#0055ff`)
+* <img src="https://via.placeholder.com/15/ffaa00/000000?text=+" /> **S100A2:** Orange (`#ffaa00`)
+* <img src="https://via.placeholder.com/15/FFFFFF/000000?text=+" /> **PanCK:** White (`#FFFFFF`)
+
 
 ---
 
