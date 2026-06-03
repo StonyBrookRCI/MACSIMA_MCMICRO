@@ -70,6 +70,15 @@ Before running the analysis, ensure you have access to the NVwulf cluster and th
 
 ## 🚀 Execution Guide
 
+### 0. Data Transfer (`rsync`)
+
+Transfer your MACSima folder to NVwulf using rclone or rsync. Ideally, this would be done from a workstation with a mounted R drive (VAST), and a WSL terminal with rsync.
+
+For example:
+```bash
+rsync -avP <path_to_source_folder> <username>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/projects/SmithGroup-nvwulf/<destination_folder>
+```
+
 ### 1. Data Staging (`staging.sh`)
 
 The first step is to reorganize the MACSima raw data into a structure compatible with MCMICRO. This script uses the `macsima2mc` tool to process the raw folders.
