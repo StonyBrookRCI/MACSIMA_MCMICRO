@@ -5,16 +5,20 @@ This repository contains the scripts and configuration files required to process
 This workflow was specifically optimized for Tissue Microarray (TMA) analysis of Pancreatic Ductal Adenocarcinoma (PDAC). A sample taken from the Stony Brook University Department of Pathology, the pipeline is tailored to quantify the spatial dynamics of the Epithelial-Mesenchymal Transition (EMT).
 
 ![Pancreatic_Cancer](MCMICRO-ezgif.com-optimize.gif))
+
 Color legend:
-* <img src="https://via.placeholder.com/15/5500ff/000000?text=+" /> **DAPI:** Dark Blue (`#5500ff`)
-* <img src="https://via.placeholder.com/15/FFFF00/000000?text=+" /> **GATA6:** Yellow (`#FFFF00`)
-* <img src="https://via.placeholder.com/15/55ffff/000000?text=+" /> **K17:** Light Blue (`#55ffff`)
-* <img src="https://via.placeholder.com/15/FF0000/000000?text=+" /> **CD324:** Red (`#FF0000`)
-* <img src="https://via.placeholder.com/15/00ff00/000000?text=+" /> **Ki-67:** Green (`#00ff00`)
-* <img src="https://via.placeholder.com/15/ffaa00/000000?text=+" /> **CD31:** Orange (`#ffaa00`)
-* <img src="https://via.placeholder.com/15/0055ff/000000?text=+" /> **SMA1:** Medium Blue (`#0055ff`)
-* <img src="https://via.placeholder.com/15/ffaa00/000000?text=+" /> **S100A2:** Orange (`#ffaa00`)
-* <img src="https://via.placeholder.com/15/FFFFFF/000000?text=+" /> **PanCK:** White (`#FFFFFF`)
+
+| Marker | Color Name | Hex Code | Swatch |
+| :--- | :--- | :--- | :---: |
+| **DAPI** | Dark Blue | `#5500ff` | <span style="color:#5500ff; font-size:20px;">■</span> |
+| **GATA6** | Yellow | `#FFFF00` | <span style="color:#FFFF00; font-size:20px;">■</span> |
+| **K17** | Light Blue | `#55ffff` | <span style="color:#55ffff; font-size:20px;">■</span> |
+| **CD324** | Red | `#FF0000` | <span style="color:#FF0000; font-size:20px;">■</span> |
+| **Ki-67** | Green | `#00ff00` | <span style="color:#00ff00; font-size:20px;">■</span> |
+| **CD31** | Orange | `#ffaa00` | <span style="color:#ffaa00; font-size:20px;">■</span> |
+| **SMA1** | Medium Blue | `#0055ff` | <span style="color:#0055ff; font-size:20px;">■</span> |
+| **S100A2** | Orange | `#ffaa00` | <span style="color:#ffaa00; font-size:20px;">■</span> |
+| **PanCK** | White | `#FFFFFF` | <span style="color:#FFFFFF; font-size:20px;">■</span> |
 
 
 ---
