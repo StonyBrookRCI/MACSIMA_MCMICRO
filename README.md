@@ -4,7 +4,7 @@ This repository contains the scripts and configuration files required to process
 
 This workflow was specifically optimized for Tissue Microarray (TMA) analysis of Pancreatic Ductal Adenocarcinoma (PDAC). A sample taken from the Stony Brook University Department of Pathology, the pipeline is tailored to quantify the spatial dynamics of the Epithelial-Mesenchymal Transition (EMT).
 
-![Pancreatic_Cancer](TMA_MCMICRO.gif)
+![Pancreatic_Cancer](MCMICRO-ezgif.com-optimize.gif))
 
 ---
 
