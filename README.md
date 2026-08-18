@@ -70,13 +70,48 @@ Before running the analysis, ensure you have access to the NVwulf cluster and th
 
 ## 🚀 Execution Guide
 
-### 0. Data Transfer (`rsync`)
+### 0. Transferring MACSima Data to NVwulf
 
-Transfer your MACSima folder to NVwulf using rclone or rsync. Ideally, this would be done from a workstation with a mounted R drive (VAST), and a WSL terminal with rsync.
+Transfer your MACSima Rawdata folder to NVwulf using **FileZilla (GUI)**, **rsync**, or **rclone**. Ideally, command-line transfers should be run from a workstation with the mounted R drive (VAST) using a WSL or Linux terminal.
 
-For example:
+---
+
+## Option 1: FileZilla GUI (Recommended for Visual Transfers)
+
+Because NVwulf requires Duo 2FA, FileZilla must be configured using the **Interactive** logon type with restricted connection limits to avoid repeated Duo prompts during transfer.
+
+### 1. Download & Install
+* Download the **FileZilla Client** (free version) from the official site: [https://filezilla-project.org](https://filezilla-project.org/).
+* Run the installer using default settings.
+
+### 2. Configure Connection
+1. Open FileZilla and go to **File** > **Site Manager...** (or press `Ctrl+S`).
+2. Click **New site** and name it `NVwulf`.
+3. Under the **General** tab, set:
+   * **Protocol:** `SFTP - SSH File Transfer Protocol`
+   * **Host:** `login.nvwulf.stonybrook.edu`
+   * **Port:** `22`
+   * **Logon Type:** `Interactive`
+   * **User:** `<username>`
+4. Under the **Transfer Settings** tab:
+   * Check **Limit number of simultaneous connections**.
+   * Set **Maximum number of connections** to `1`. *(This ensures active session reuse so you are not spammed with Duo push notifications).*
+5. Click **OK** or **Connect**.
+
+### 3. Connect & Transfer
+1. Click **Connect**.
+2. Enter your password when prompted.
+3. When the Duo prompt appears, enter your option (e.g., `1` for Duo Push) and approve the notification on your mobile device.
+4. Drag the folder from your mapped research drive (VAST) to the remote server (HPC-NVwulf)
+
+## Option 2: Command line transfer using a UNIX terminal (WSL or MAC)
+
+Run `rsync` from your local terminal (WSL or Mac) with the mounted R drive path:
+
 ```bash
-rsync -avP <path_to_source_folder> <username>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/projects/SmithGroup-nvwulf/<destination_folder>
+sudo mount -t drvfs '\\research-share.uhmc.sunysb.edu\Example_Path$' /mnt/folder_name
+
+rsync -avP /path/to/local/folder_name <username>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/projects/SmithGroup-nvwulf/<destination_folder>
 ```
 
 ### 1. Data Staging (`staging.sh`)
