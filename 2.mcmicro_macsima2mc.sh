@@ -25,17 +25,11 @@ export NXF_SINGULARITY_CACHEDIR=/lustre/nvwulf/scratch/$USER/singularity
 module load nextflow
 export NXF_VER=25.10.1
 
-params_file="/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/params.yml"
-array_config="/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/samples.tsv"
-config="/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/nvwulf.config"
+params_file="/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/2.params.yml"
+array_config="/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/2.samples.tsv"
+config="/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/0.nvwulf.config"
 
 sample=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $array_config)
 
 nextflow run labsyspharm/mcmicro --in ${sample} \
  --params $params_file -with-report ${sample}.html -resume -c $config --viz
-
-
-
-
-
- 
