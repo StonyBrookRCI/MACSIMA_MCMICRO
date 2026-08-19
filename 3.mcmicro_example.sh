@@ -31,7 +31,7 @@ nextflow run labsyspharm/mcmicro \
     --tma \
     --viz \
     -profile singularity \
-    -c nvwulf.config
+    -c 0.nvwulf.config
 
 # TOTAL TIME: 17m29s
 
