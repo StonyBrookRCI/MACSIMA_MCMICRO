@@ -8,7 +8,7 @@
 #SBATCH --mem=100gb
 
 #INPUTS
-acquisitions=/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/acquisitions.tsv
+acquisitions=/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/1.acquisitions.tsv
 output_dir=/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/TMA/TMA_PDAC_EMT_07082025_1_tma1_2_260307_080108_MCMICRO
 #END INPUTS
 
