@@ -7,7 +7,11 @@
 #SBATCH --array=1-28
 #SBATCH --mem=100gb
 
-#INPUTS
+# How to run this script:
+# module load slurm
+# sbatch 1.staging.sh
+
+#INPUTS (Update these paths to your own files)
 acquisitions=/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/1.acquisitions.tsv
 output_dir=/lustre/nvwulf/projects/CarlsonGroup-nvwulf/agilgomez/TMA/TMA_PDAC_EMT_07082025_1_tma1_2_260307_080108_MCMICRO
 #END INPUTS
