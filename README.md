@@ -106,7 +106,7 @@ Because NVwulf requires Duo 2FA, FileZilla must be configured using the **Intera
 
 ## Option 2: Command line transfer using a UNIX terminal (WSL or MAC)
 
-Run `rsync` from your local terminal (WSL or Mac) with the mounted R drive path:
+Run `rsync` from your local terminal (WSL or Mac) with the mapped R drive path after mounting it:
 
 ```bash
 sudo mount -t drvfs '\\research-share.uhmc.sunysb.edu\Example_Path$' /mnt/folder_name
