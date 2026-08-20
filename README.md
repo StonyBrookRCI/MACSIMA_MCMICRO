@@ -45,22 +45,22 @@ Processing MACSima data involves converting raw cyclic imaging data into a forma
 ## 🛠 Prerequisites
 
 Before running the analysis, ensure you have access to the NVwulf cluster and that the following files are in your working directory:
-- `staging.sh`
-  Adjust the job array number `#SBATCH --array=1-28` to the number of lines in acquisitions.tsv
-
-- `acquisitions.tsv`  
-  A tab-separated file mapping Slurm array indices to individual MACSima sample directories. This file is used by `staging.sh` to determine which acquisition folder each array task should process.
-
-- `samples.tsv`  
-  A tab-separated file mapping Slurm array indices to individual exp for MCMICRO sample directories. This file is used by `mcmicro_macsima.sh` to determine which raw folder each array task should process.
-
-- `mcmicro_macsima2mc.sh`
-  Adjust the job array number `#SBATCH --array=1-55` to the number of lines in samples.tsv
-  
-- `nvwulf.config`  
+- `0.nvwulf.config`  
   A required Nextflow configuration file that defines the SLURM settings, GPU resource allocations, and Singularity container paths specific to the NVwulf environment.
 
-- `params.yml`  
+- `1.staging.sh`
+  Adjust the job array number `#SBATCH --array=1-28` to the number of lines in acquisitions.tsv
+
+- `1.acquisitions.tsv`  
+  A tab-separated file mapping Slurm array indices to individual MACSima sample directories. This file is used by `staging.sh` to determine which acquisition folder each array task should process.
+
+- `2.samples.tsv`  
+  A tab-separated file mapping Slurm array indices to individual exp for MCMICRO sample directories. This file is used by `mcmicro_macsima.sh` to determine which raw folder each array task should process.
+
+- `2.mcmicro_macsima2mc.sh`
+  Adjust the job array number `#SBATCH --array=1-55` to the number of lines in samples.tsv
+  
+- `2.params.yml`  
   Defines the MCMICRO workflow steps (e.g., starting at registration, stopping at downstream analysis), and command flags.
 
 - `markers.csv`  
@@ -123,7 +123,7 @@ The first step is to reorganize the MACSima raw data into a structure compatible
 Submit the staging script as a Slurm array job:
 
 ```bash
-sbatch staging.sh
+sbatch 1.staging.sh
 ```
 
 #### What it does
@@ -143,7 +143,7 @@ Once the data is staged, you can run the full MCMICRO pipeline. This script orch
 #### Usage
 
 ```bash
-sbatch mcmicro_macsima2mc.sh
+sbatch 2.mcmicro_macsima2mc.sh
 ```
 
 ---
