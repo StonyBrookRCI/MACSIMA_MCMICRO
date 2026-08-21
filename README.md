@@ -48,11 +48,8 @@ Before running the analysis, ensure you have access to the NVwulf cluster and th
 - `0.nvwulf.config`  
   A required Nextflow configuration file that defines the SLURM settings, GPU resource allocations, and Singularity container paths specific to the NVwulf environment.
 
-- `1.staging.sh`
-  Adjust the job array number `#SBATCH --array=1-28` to the number of lines in acquisitions.tsv
-
-- `1.acquisitions.tsv`  
-  A tab-separated file mapping Slurm array indices to individual MACSima sample directories. This file is used by `staging.sh` to determine which acquisition folder each array task should process.
+- `1.staging.nf`
+  The Nextflow staging workflow that processes all ROI sample directories in parallel using Slurm (`MACSIMA2MC_NODE`). It automatically parses ROIs, filters out control directories (e.g., `ROI0`), and executes `macsima2mc` across all imaging cycles.
 
 - `2.samples.tsv`  
   A tab-separated file mapping Slurm array indices to individual exp for MCMICRO sample directories. This file is used by `mcmicro_macsima.sh` to determine which raw folder each array task should process.
@@ -114,7 +111,7 @@ sudo mount -t drvfs '\\research-share.uhmc.sunysb.edu\Example_Path$' /mnt/folder
 rsync -avP /path/to/local/folder_name <username>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/projects/SmithGroup-nvwulf/<destination_folder>
 ```
 
-### 1. Data Staging (`staging.sh`)
+### 1. Data Staging (`staging.nf`)
 
 The first step is to reorganize the MACSima raw data into a structure compatible with MCMICRO. This script uses the `macsima2mc` tool to process the raw folders.
 
@@ -123,7 +120,7 @@ The first step is to reorganize the MACSima raw data into a structure compatible
 Submit the staging script as a Slurm array job:
 
 ```bash
-sbatch 1.staging.sh
+1.staging.nf
 ```
 
 #### What it does
