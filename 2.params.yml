@@ -2,10 +2,10 @@ workflow:
   start-at: registration #registration
   stop-at: downstream
   background: true
-  segmentation-channel: 1
+  segmentation-channel: 1 3
   segmentation-recyze: true
-  #segmentation: [unmicst, ilastik]
   segmentation: cellpose
 options:
   ashlar: --flip-y
-  cellpose: --pretrained_model nuclei --chan 0 --diameter 50 --no_npy
+  cellpose: --pretrained_model tissuenet --chan 2 --chan2 1 --no_npy 
+  s3seg: --nucleiRegion localMax --CytoMaskChan 2 --segmentCytoplasm segmentCytoplasm --cytoMethod ring --cytoDilation 5
