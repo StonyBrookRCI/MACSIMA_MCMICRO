@@ -163,6 +163,25 @@ Once the data is staged, you can run the full MCMICRO pipeline. This script orch
 sbatch 2.mcmicro_macsima2mc.sh
 ```
 
+### A note on disk space
+
+Delete the Nextflow work directories after an experiment completes successfully. These directories contain the intermediate files generated during the workflow and can substantially increase disk usage, consuming your project quota.
+
+# Check total project space
+```bash
+du -sh /lustre/nvwulf/projects/group_name
+
+# Delete work directories from a completed experiment
+rm -rfv *ROI*/work
+```
+You should also transfer and archive data when you no longer need it on the cluster. Before graduating or leaving the project, make sure collaborators can access and manage the data by setting group permissions appropriately:
+
+```bash
+chmod g=u -R .
+```
+
+This gives group members the same permissions as the corresponding user permissions, making it easier for collaborators to archive or delete the data when necessary.
+
 ---
 
 ### 3. Napari + Extensions
