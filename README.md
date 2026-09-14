@@ -48,8 +48,11 @@ Before running the analysis, ensure you have access to the NVwulf cluster and th
 - `0.nvwulf.config`  
   A required Nextflow configuration file that defines the SLURM settings, GPU resource allocations, and Singularity container paths specific to the NVwulf environment.
 
+- `0.append_experiments.nf`  (optional)
+  A Nextflow script that combines multiple experimental runs performed on the same sample. It merges the RawData directories from two or more experiments, reindexes the cycle numbers sequentially, and preserves the original directory structure to create a single combined RawData directory for downstream processing.
+
 - `1.staging.nf`
-  The Nextflow staging workflow that processes all ROI sample directories in parallel using Slurm (`MACSIMA2MC_NODE`). It automatically parses ROIs, filters out control directories (e.g., `ROI0`), and executes `macsima2mc` across all imaging cycles.
+    The Nextflow staging workflow that processes all ROI sample directories in parallel using Slurm (`MACSIMA2MC_NODE`). It automatically discovers ROIs, filters out control directories (e.g., `ROI0`), and runs `macsima2mc` across all imaging cycles. It can optionally perform illumination correction (`-ic`) and generates OME-TIFF files for downstream MCMICRO processing. Illumination correction can be disabled for datasets that do not contain sufficient FOV/tile information for illumination correction.
 
 - `2.samples.tsv`  
   A tab-separated file mapping Slurm array indices to individual exp for MCMICRO sample directories. This file is used by `mcmicro_macsima.sh` to determine which raw folder each array task should process.
@@ -110,18 +113,35 @@ sudo mount -t drvfs '\\research-share.uhmc.sunysb.edu\Example_Path$' /mnt/folder
 
 rsync -avP /path/to/local/folder_name <username>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/projects/SmithGroup-nvwulf/<destination_folder>
 ```
+### 0. Appending experiments (`append_experiments.nf`) [optional]
+
+If you have multiple experiments on the same tissue and would like to combine the RawData into a single experiment, you can use append_experiments.nf.
+
+```bash
+module load nextflow
+
+export NXF_VER=25.10.1
+
+nextflow run 0.append_experiments.nf -resume --inputs './Experiment1/RawData,./Experiment2/RawData' --output './CombinedExperiment/RawData' -c 0.nvwulf.config
+```
+
+Delete the original rawdata and work directory after successful execution to save disk space.
 
 ### 1. Data Staging (`staging.nf`)
 
 The first step is to reorganize the MACSima raw data into a structure compatible with MCMICRO. This script uses the `macsima2mc` tool to process the raw folders.
 
+```bash
+module load nextflow
+
+export NXF_VER=25.10.1
+
+nextflow run 1.staging.nf --rawdata RawData/R1/B1 --outdir Exp_MCMICRO  -c 0.nvwulf.config -resume --with-report report.html --with-timeline timeline.html
+```
+
 #### Usage
 
 Submit the staging script as a Slurm array job:
-
-```bash
-1.staging.nf
-```
 
 #### What it does
 
@@ -145,7 +165,11 @@ sbatch 2.mcmicro_macsima2mc.sh
 
 ---
 
-### 3. Testing with Example Data (`mcmicro_example.sh`)
+### 3. Napari + Extensions
+
+Visualize the processed images, segmentation masks, and quantification results using the OOD NVwulf app napari. Inspect segmentation overlays against the original imaging data to evaluate whether the selected markers and segmentation models are performing accurately before relying on downstream cell-level quantification.
+
+### 4. Testing with Example Data (`mcmicro_example.sh`)
 
 If you are new to the cluster or the pipeline, it is recommended to run the included `mcmicro_example.sh`.
 
