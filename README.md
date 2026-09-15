@@ -1,6 +1,6 @@
-# MCMICRO for MACSima on NVwulf
+# MCMICRO for MACSima on HPC
 
-This repository contains the scripts and configuration files required to process MACSima spatial proteomics data using the MCMICRO pipeline on the NVwulf high-performance computing (HPC) cluster.
+This repository contains the scripts and configuration files required to process MACSima spatial proteomics data using the MCMICRO pipeline on high-performance computing (HPC) cluster.
 
 This workflow was specifically optimized for Tissue Microarray (TMA) analysis of Pancreatic Ductal Adenocarcinoma (PDAC). A sample taken from the Stony Brook University Department of Pathology, the pipeline is tailored to quantify the spatial dynamics of the Epithelial-Mesenchymal Transition (EMT).
 
@@ -196,9 +196,9 @@ This uses a small, validated dataset and the `markersheet.csv` to ensure your en
 
 ---
 
-## 💻 NVwulf Access & Open OnDemand
+## 💻 Stony Brook HPC Access & Open OnDemand
 
-### Getting Started with NVwulf
+### Getting Started with NVwulf (GPU-based cluster)
 
 Official getting started documentation for NVwulf:
 
