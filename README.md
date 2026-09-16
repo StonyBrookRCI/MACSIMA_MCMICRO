@@ -99,10 +99,11 @@ Because NVwulf requires Duo 2FA, FileZilla must be configured using the **Intera
 5. Click **OK** or **Connect**.
 
 ### 3. Connect & Transfer
-1. Click **Connect**.
-2. Enter your password when prompted.
-3. When the Duo prompt appears, enter your option (e.g., `1` for Duo Push) and approve the notification on your mobile device.
-4. Drag the folder from your mapped research drive (VAST) to the remote server (HPC-NVwulf)
+1. Click **File > Site Manager**.
+2. Select your site and click connect
+3. Enter your password when prompted.
+4. When the Duo prompt appears, enter your option (e.g., `1` for Duo Push) and approve the notification on your mobile device.
+5. Drag the folder from your mapped research drive (VAST) to the remote server (HPC-NVwulf)
 
 ## Option 2: Command line transfer using a UNIX terminal (WSL or MAC)
 
