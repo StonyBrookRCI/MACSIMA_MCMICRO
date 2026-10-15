@@ -189,6 +189,8 @@ This gives group members the same permissions as the corresponding user permissi
 
 Visualize the processed images, segmentation masks, and quantification results using the OOD NVwulf app napari. Inspect segmentation overlays against the original imaging data to evaluate whether the selected markers and segmentation models are performing accurately before relying on downstream cell-level quantification.
 
+Launch an OOD job on NVwulf and load your backsub.ome.tif using napari-builtin. Load additional segmentation masks to inspect the segmentation accuracy.
+
 ### 4. Testing with Example Data (`mcmicro_example.sh`)
 
 If you are new to the cluster or the pipeline, it is recommended to run the included `mcmicro_example.sh`.
